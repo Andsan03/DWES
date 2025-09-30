@@ -45,21 +45,47 @@
         "Mateo"=> 1.90
     ];
 
+    $suma = 0;
+
     echo "<table border = 1>";
-        for ($i=0; $i < count($alturas); $i++) {
+        echo "<tr><th>Names</th><th>Height</th></tr>";
+        foreach ($alturas as $name => $height) {
+            $suma += $height;
             echo "<tr>";
-            for ($j=0; $j < count($alturas); $i++) { 
-                foreach ($alturas as $person => $value) {
-                    echo "<td>$person</td>";
-                }
-            };
-        };  
+            echo "<td>$name</td>";
+            echo "<td>$height</td>";
             echo "</tr>";
+        };
+        $media = $suma / count($alturas);
+        echo "<tr>";
+            echo "<td>Media</td>";
+            echo "<td>$media</td>";
+            echo "</tr>";
+            
     echo "</table>";
     ?>
 
     <h2>Ejercicio 4</h2>
     <?php
+    $numeros = [];
+
+    for ($i= 0; $i < 10; $i++) {
+        array_push($numeros,random_int(0,100));  
+    };
+    foreach ($numeros as $numero) {
+        $cuadrados[] = $numero ** 2;
+        $cubos[] = $numero ** 3;
+    }
+    echo "<table border= 1>";
+    echo "<tr><th>Valores</th><th>Cuadrados</th><th>Cubos</th></tr>";
+    for ($i= 0; $i < count($numeros); $i++) {
+        echo "<tr>";
+        echo "<td>$numeros[$i]</td>";
+        echo "<td>$cuadrados[$i]</td>";
+        echo "<td>$cubos[$i]</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
 
     ?>
 
@@ -70,7 +96,21 @@
 
     <h2>Ejercicio 6</h2>
     <?php
-
+    $max_temperature = [
+        "Enero"=> 14.8,
+        "Febrero"=> 19,
+        "Marzo"=> 25.2,
+        "Abril"=> 30.9,
+        "Mayo" => 29.1,
+        "Junio" => 37,
+        "Julio" => 38.7,
+        "Agosto" => 40,
+        "Septiembre" => 31.6,
+        "Octubre" => 30.1,
+        "Noviembre" => 18.6,
+        "Diciembre" => 13.1,
+        
+    ]
     ?>
 
     <h2>Ejercicio 7</h2>
